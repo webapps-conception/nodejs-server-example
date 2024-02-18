@@ -5,11 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "node src/server.cjs",
-    "pg": "node src/server_pg.cjs"
+    "pg": "node src/server_pg.cjs",
+    "tkserver": "node src/server_token.cjs",
+    "tkclient": "node src/fake-client.cjs"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
+    "dotenv": "^16.4.4",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "axios": "^1.6.7"
   }
 }
