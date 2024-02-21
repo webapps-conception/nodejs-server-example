@@ -17,12 +17,24 @@ const manufacturers = JSON.stringify([
  { name: "Bosch", countryOfOrigin: "Germany", partnerSince: 2014 }
 ]);
 
+/**
+ * return contents text
+ * @param   {string} req  Requête
+ * @param   {string} res  Resultat
+ * @return  {string}       Null
+ */
 function hello(req, res) {
  res.writeHead(200);
  res.end("Hello from Server!");
  return;
 }
 
+/**
+ * return contents application/json
+ * @param   {string} req  Requête
+ * @param   {string} res  Resultat
+ * @return  {string}       Null
+ */
 function json_msg(req, res) {
  res.setHeader("Content-Type", "application/json");
  res.writeHead(200);
@@ -30,6 +42,12 @@ function json_msg(req, res) {
  return;
 }
 
+/**
+ * return contents text/html
+ * @param   {string} req  Requête
+ * @param   {string} res  Resultat
+ * @return  {string}       Null
+ */
 function html_msg(req, res) {
  res.setHeader("Content-Type", "text/html");
  res.writeHead(200);
@@ -37,6 +55,12 @@ function html_msg(req, res) {
  return;
 }
 
+/**
+ * return contents text/html
+ * @param   {string} req  Requête
+ * @param   {string} res  Resultat
+ * @return  {string}       Null
+ */
 function html_index(req, res) {
  fs.readFile(__dirname + "/../public/index.html")
  .then(contents => {
@@ -52,6 +76,12 @@ function html_index(req, res) {
  });
 }
 
+/**
+ * return items application/json
+ * @param   {string} req  Requête
+ * @param   {string} res  Resultat
+ * @return  {string}       Null
+ */
 function json_items(req, res) {
  res.setHeader("Content-Type", "application/json");
  res.writeHead(200);
@@ -59,6 +89,12 @@ function json_items(req, res) {
  return;
 }
 
+/**
+ * return manufacturers application/json
+ * @param   {string} req  Requête
+ * @param   {string} res  Resultat
+ * @return  {string}       Null
+ */
 function json_manufacturers(req, res) {
  res.setHeader("Content-Type", "application/json");
  res.writeHead(200);
@@ -66,6 +102,12 @@ function json_manufacturers(req, res) {
  return;
 }
 
+/**
+ * return route error
+ * @param   {string} req  Requête
+ * @param   {string} res  Resultat
+ * @return  {string}       Null
+ */
 function route_error(req, res) {
  res.setHeader("Content-Type", "application/json");
  res.writeHead(404);

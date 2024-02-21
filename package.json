@@ -2,12 +2,14 @@
   "name": "nodeserver-example",
   "private": true,
   "version": "0.0.1",
-  "type": "module",
   "scripts": {
     "dev": "node src/server.cjs",
+    "docs": "jsdoc -c jsdoc.conf.json",
     "pg": "node src/server_pg.cjs",
     "tkserver": "node src/server_token.cjs",
-    "tkclient": "node src/fake-client.cjs"
+    "tkclient": "node src/fake-client.cjs",
+    "mocha": "./node_modules/.bin/mocha",
+    "test": "mocha --recursive --exit"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
@@ -17,6 +19,9 @@
     "pg": "^8.11.3"
   },
   "devDependencies": {
-    "axios": "^1.6.7"
+    "axios": "^1.6.7",
+    "better-docs": "^2.7.3",
+    "jsdoc": "^4.0.2",
+    "mocha": "^10.3.0"
   }
 }

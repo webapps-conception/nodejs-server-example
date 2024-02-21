@@ -13,11 +13,20 @@ const user = {
   admin: true,
 };
 
+/**
+ * return Access Token
+ * @param   {string} user  Username
+ * @return  {string}       Access Token
+ */
 function generateAccessToken(user) {
   return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1800s'});
 }
 
-
+/**
+ * return Refresh Token
+ * @param   {string} user  Username
+ * @return  {string}       Refresh Token
+ */
 function generateRefreshToken(user) {
   return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '1y'});
 }
